@@ -1,0 +1,7 @@
+Come up with test cases matching input with expected output. Try to come up with as many corner/edge cases as possible.
+
+Examples:
+
+basic sentences
+sentences with spaces, tabs, newlines (+ multiple in a row)
+sentences with weird escape sequences
