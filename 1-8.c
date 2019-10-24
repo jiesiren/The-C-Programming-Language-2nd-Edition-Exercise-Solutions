@@ -7,7 +7,7 @@ int main() {
 
     while ((c = getchar()) != EOF) {
         if (c == ' ' || c == '\t' || c == '\n') {
-            num_ws = num_ws + 1;
+            num_ws++;
         }
     }
 
