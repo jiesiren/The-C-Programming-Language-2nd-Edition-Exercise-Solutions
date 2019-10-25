@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int c, last_c;
 
     last_c = EOF;
@@ -11,4 +11,6 @@ int main() {
         }
         last_c = c;
     }
+
+    return 0;
 }

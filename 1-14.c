@@ -3,7 +3,7 @@
 #define PLOT_CHAR '#'
 #define ASCII_LIMIT 128
 
-int main() {
+int main(void) {
     int c;
 
     // counts[i] will contain the number of characters of ASCII value i
@@ -29,4 +29,6 @@ int main() {
             putchar('\n');
         }
     }
+
+    return 0;
 }

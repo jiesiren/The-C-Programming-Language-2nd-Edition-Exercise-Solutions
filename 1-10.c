@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int c;
 
     while ((c = getchar()) != EOF) {
@@ -14,4 +14,6 @@ int main() {
             putchar(c);
         }
     }
+
+    return 0;
 }

@@ -5,7 +5,7 @@
 int get_line(char line[], int maxline);
 void copy(char to[], char from[]);
 
-int main() {
+int main(void) {
     int len, max;
     char line[MAXLINE];
     char longest[MAXLINE];
@@ -22,6 +22,7 @@ int main() {
         printf("Longest len: %d\n", max);
         printf("%s", longest);
     }
+
     return 0;
 }
 

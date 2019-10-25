@@ -3,7 +3,7 @@
 #define TRUE (1==1)
 #define FALSE (!TRUE)
 
-int main() {
+int main(void) {
     int c, prev_is_ws;
 
     prev_is_ws = TRUE;
@@ -20,4 +20,6 @@ int main() {
             prev_is_ws = FALSE;
         }
     }
+
+    return 0;
 }

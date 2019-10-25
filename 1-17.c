@@ -5,7 +5,7 @@
 
 int get_line(char line[], int maxline);
 
-int main() {
+int main(void) {
     int len;
     char line[MAXLINE];
 
@@ -14,6 +14,7 @@ int main() {
             printf("%s", line);
         }
     }
+
     return 0;
 }
 

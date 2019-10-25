@@ -21,7 +21,7 @@ void reverse(char s[]) {
     }
 }
 
-int main() {
+int main(void) {
     int len;
     char line[MAXLINE];
 
@@ -29,6 +29,7 @@ int main() {
         reverse(line);
         printf("%s", line);
     }
+
     return 0;
 }
 

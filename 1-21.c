@@ -55,7 +55,7 @@ void entab_line(char line[], int buf_size) {
     }
 }
 
-int main() {
+int main(void) {
     int len;
     char line[BUFFER_SIZE];
 
@@ -63,4 +63,6 @@ int main() {
         entab_line(line, BUFFER_SIZE);
         printf("%s", line);
     }
+
+    return 0;
 }

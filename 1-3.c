@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
     float fahr, celsius;
     int lower, upper, step;
 
@@ -17,4 +17,6 @@ int main() {
         printf("%3.0f %6.1f\n", fahr, celsius);
         fahr = fahr + step;
     }
+
+    return 0;
 }

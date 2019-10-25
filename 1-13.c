@@ -5,7 +5,7 @@
 // should be large enough for the num of digits in MAX_LEN provided above
 #define COLUMN_SIZE 2
 
-int main() {
+int main(void) {
     int c, cur_word_len;
 
     // counts[i] will contain the number of words of length i
@@ -77,4 +77,6 @@ int main() {
         }
     }
     printf("\n");
+
+    return 0;
 }

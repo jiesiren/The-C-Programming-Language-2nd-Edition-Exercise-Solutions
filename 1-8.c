@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int c, num_ws;
 
     num_ws = 0;
@@ -12,4 +12,6 @@ int main() {
     }
 
     printf("Number of whitespace characters: %d\n", num_ws);
+
+    return 0;
 }

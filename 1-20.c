@@ -30,6 +30,7 @@ void detab_line(char line[], int buf_size) {
                 spaces_needed = TAB_STOP_SIZE;
             }
 
+
         }
     }
 }
@@ -72,7 +73,7 @@ void tab_to_spaces_line(char line[], int buf_size) {
     }
 }
 
-int main() {
+int main(void) {
     int len;
     char line[BUFFER_SIZE];
 
@@ -81,4 +82,6 @@ int main() {
         tab_to_spaces_line(line, BUFFER_SIZE);
         printf("%s", line);
     }
+
+    return 0;
 }
