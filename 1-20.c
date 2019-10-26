@@ -1,43 +1,11 @@
 #include <stdio.h>
 
-#define BUFFER_SIZE 1000
-#define TAB_STOP_SIZE 4
-#define SPACES_PER_TAB 4
-
-int get_line(char s[], int buf_size) {
-    int c, i;
-
-    for (i = 0; i < buf_size - 1
-            && (c = getchar()) != EOF
-            && c != '\n'; i++) {
-        s[i] = c;
-    }
-    if (c == '\n') {
-        s[i] = c;
-        i++;
-    }
-    s[i] = '\0';
-    return i;
-}
-
-void detab_line(char line[], int buf_size) {
-    int i = 0;
-    int chars_to_add = 0; // in addition to replacing the '\t' char
-    while (line[i]) {
-        if (line[i] == '\t') {
-            int spaces_needed = i % TAB_STOP_SIZE;
-            if (spaces_needed == 0) {
-                spaces_needed = TAB_STOP_SIZE;
-            }
-
-
-        }
-    }
-}
+#define TAB_SIZE 4
 
 // Note: Lol did not interpret question correctly first time, so here
 // is an extra function that converts tabs to spaces ¯\_(ツ)_/¯
 // buf_size is the size of the provided char array line
+/*
 void tab_to_spaces_line(char line[], int buf_size) {
     int i = 0;
     int num_tabs = 0;
@@ -72,15 +40,27 @@ void tab_to_spaces_line(char line[], int buf_size) {
         i--;
     }
 }
+*/
 
 int main(void) {
-    int len;
-    char line[BUFFER_SIZE];
+    int c, i;
 
-    while ((len = get_line(line, BUFFER_SIZE)) > 0) {
-        detab_line(line, BUFFER_SIZE);
-        tab_to_spaces_line(line, BUFFER_SIZE);
-        printf("%s", line);
+    i = 0;
+
+    while ((c = getchar()) != EOF) {
+        if (c == '\t') {
+            do {
+                i = (i + 1) % TAB_SIZE;
+                putchar(' ');
+            } while (i != 0);
+        } else {
+            if (c == '\n') {
+                i = 0;
+            } else {
+                i = (i + 1) % TAB_SIZE;
+            }
+            putchar(c);
+        }
     }
 
     return 0;
