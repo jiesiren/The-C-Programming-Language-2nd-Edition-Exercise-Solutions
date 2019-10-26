@@ -1,17 +1,24 @@
 #include <stdio.h>
 
 int main(void) {
-    int c, num_ws;
+    int c;
+    int spaces, tabs, newlines;
 
-    num_ws = 0;
+    spaces = tabs = newlines = 0;
 
     while ((c = getchar()) != EOF) {
-        if (c == ' ' || c == '\t' || c == '\n') {
-            num_ws++;
+        if (c == ' ') {
+            spaces++;
+        } else if (c == '\t') {
+            tabs++;
+        } else if (c == '\n') {
+            newlines++;
         }
     }
 
-    printf("Number of whitespace characters: %d\n", num_ws);
+    printf("# spaces: %d\n", spaces);
+    printf("# tabs: %d\n", tabs);
+    printf("# newlines: %d\n", newlines);
 
     return 0;
 }
