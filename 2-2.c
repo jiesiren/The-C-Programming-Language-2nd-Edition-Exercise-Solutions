@@ -22,7 +22,10 @@ int get_line(char s[], int lim) {
 
 int main(void) {
     char s[BUF_SIZE];
+
     while (get_line(s, BUF_SIZE) > 0) {
         printf("%s", s);
     }
+
+    return 0;
 }
