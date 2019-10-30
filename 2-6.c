@@ -9,6 +9,16 @@ void print_binary(unsigned int n) {
     }
 }
 
+void print_range_indic(unsigned int p, unsigned int n, char indic_c) {
+    for (unsigned int i = 0; i < UI_NUM_BITS; i++) {
+        if (i >= UI_NUM_BITS - p - 1 && i < UI_NUM_BITS - p - 1 + n) {
+            putchar(indic_c);
+        } else {
+            putchar(' ');
+        }
+    }
+}
+
 unsigned int setbits(unsigned int x, unsigned int p, unsigned int n,
                      unsigned int y) {
     const unsigned int rm_n_mask = ~(~0U << n);
@@ -24,51 +34,33 @@ int main(void) {
     int p = 11;
     int n = 5;
 
-    printf("x = ");
     print_binary(x);
+    printf(" = x");
     putchar('\n');
 
     // highlight n bits from position p
-    for (unsigned int i = 0; i < UI_NUM_BITS + 4; i++) {
-        if (i >= UI_NUM_BITS + 4 - p - 1 && i < UI_NUM_BITS + 4 - p - 1 + n) {
-            putchar('^');
-        } else {
-            putchar(' ');
-        }
-    }
+    print_range_indic(p, n, '^');
     putchar('\n');
 
-    printf("y = ");
     print_binary(y);
+    printf(" = y");
     putchar('\n');
 
     // highlight last n bits of y
-    for (unsigned int i = 0; i < UI_NUM_BITS + 4; i++) {
-        if (i >= UI_NUM_BITS + 4 - n) {
-            putchar('^');
-        } else {
-            putchar(' ');
-        }
-    }
+    print_range_indic(n - 1, n, '^');
     putchar('\n');
 
-    for (unsigned int i = 0; i < UI_NUM_BITS + 4; i++) {
+    for (unsigned int i = 0; i < UI_NUM_BITS; i++) {
         putchar('-');
     }
     putchar('\n');
 
-    printf("res=");
     print_binary(setbits(x, p, n, y));
+    printf(" = setbits(x, %d, %d, y)", p, n);
     putchar('\n');
 
     // highlight n bits from position p
-    for (unsigned int i = 0; i < UI_NUM_BITS + 4; i++) {
-        if (i >= UI_NUM_BITS + 4 - p - 1 && i < UI_NUM_BITS + 4 - p - 1 + n) {
-            putchar('^');
-        } else {
-            putchar(' ');
-        }
-    }
+    print_range_indic(p, n, '^');
     putchar('\n');
 
     return 0;
