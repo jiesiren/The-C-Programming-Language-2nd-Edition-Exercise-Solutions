@@ -26,7 +26,7 @@ void itoa(int n, char s[]) {
 
     do {
         s[i++] = (sign * (n % 10)) + '0';
-    } while ((n /= 10) != 0);
+    } while (n /= 10);
 
     if (sign < 0) {
         s[i++] = '-';
